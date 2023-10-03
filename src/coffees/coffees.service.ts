@@ -1,13 +1,16 @@
-import { HttpCode, HttpException, HttpStatus, Injectable, NotFoundException } from "@nestjs/common";
-import { Coffee } from "./entities/coffees.entity";
-import type { Repository } from "typeorm";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import type { Repository } from "typeorm";
 import { CreateCoffeeDto } from "./dto/create-coffee.dto";
 import { UpdateCoffeeDto } from "./dto/update-coffee.dto";
+import { Coffee } from "./entities/coffees.entity";
 
 @Injectable()
 export class CoffeesService {
-  constructor(@InjectRepository(Coffee) private readonly coffeeRepository: Repository<Coffee>) {}
+  constructor(
+    @InjectRepository(Coffee)
+    private readonly coffeeRepository: Repository<Coffee>,
+  ) {}
 
   findAll() {
     return this.coffeeRepository.find();

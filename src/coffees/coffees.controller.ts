@@ -1,7 +1,7 @@
-import { CoffeesService } from "./coffees.service";
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
 import { CreateCoffeeDto } from "./dto/create-coffee.dto";
 import { UpdateCoffeeDto } from "./dto/update-coffee.dto";
+import { CoffeesService } from "./coffees.service";
 
 @Controller("coffees")
 export class CoffeesController {
