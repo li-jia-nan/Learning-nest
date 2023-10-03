@@ -1,4 +1,4 @@
-import { Coffee } from "./coffees.entity";
+import { Coffee } from "./coffee.entity";
 import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
