@@ -26,14 +26,14 @@ export class CoffeesService {
   }
   async create(createCoffeeDto: CreateCoffeeDto) {
     const flavors = await Promise.all(
-      (createCoffeeDto.flavors || []).map(this.preloadFlavorByName),
+      (createCoffeeDto.flavors || []).map<Promise<Flavor>>(name => this.preloadFlavorByName(name)),
     );
     const coffee = this.coffeeRepository.create({ ...createCoffeeDto, flavors });
     return this.coffeeRepository.save(coffee);
   }
   async update(id: number, updateCoffeeDto: UpdateCoffeeDto) {
     const flavors = await Promise.all(
-      (updateCoffeeDto.flavors || []).map(this.preloadFlavorByName),
+      (updateCoffeeDto.flavors || []).map<Promise<Flavor>>(name => this.preloadFlavorByName(name)),
     );
     const coffee = await this.coffeeRepository.preload({ id: +id, ...updateCoffeeDto, flavors });
     if (!coffee) {
