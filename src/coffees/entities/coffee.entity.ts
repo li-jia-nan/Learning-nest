@@ -7,7 +7,7 @@ export class Coffee {
   id: number;
 
   @Column()
-  name: string;
+  title: string;
 
   @Column()
   brand: string;
