@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { Injectable, NotFoundException, Scope } from "@nestjs/common";
 import { InjectDataSource, InjectRepository } from "@nestjs/typeorm";
 import type { DataSource, Repository } from "typeorm";
 import { PaginationQueryDto } from "src/common/dto/pagination-query.dto";
@@ -13,8 +13,10 @@ export class CoffeesService {
   constructor(
     @InjectRepository(Coffee)
     private readonly coffeeRepository: Repository<Coffee>,
+
     @InjectRepository(Flavor)
     private readonly flavorRepository: Repository<Flavor>,
+
     @InjectDataSource()
     private readonly dataSource: DataSource,
   ) {}
