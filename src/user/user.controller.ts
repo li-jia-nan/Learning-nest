@@ -1,7 +1,7 @@
 import { Controller, Get, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { ConfigService } from '@nestjs/config';
-import { ConfigEnum } from './enum/config.enum';
+// import { ConfigEnum } from './enum/config.enum';
 
 @Controller('user')
 export class UserController {
@@ -12,7 +12,10 @@ export class UserController {
 
   @Get()
   getUsers() {
-    this.configService.get(ConfigEnum.DB);
+    // const url = this.configService.get(ConfigEnum.DB_URL);
+    // console.log(url);
+    const data = this.configService.get('dba');
+    console.log(data);
     return this.userService.getUsers();
   }
 

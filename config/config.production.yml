@@ -1,0 +1,6 @@
+dba:
+  mysql1:
+    name: lijianan-prod-1
+
+  mysql2:
+    name: lijianan-prod-2
