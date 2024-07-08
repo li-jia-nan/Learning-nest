@@ -1,6 +1,8 @@
-dba:
-  mysql1:
-    name: lijianan-prod-1
+DB_DATABASE: proddb
+DB_HOST: xxxxx.com
+DB_PORT: 3306
 
-  mysql2:
-    name: lijianan-prod-2
+DB_USERNAME: root
+DB_PASSWORD: lang-example-password
+
+DB_SYNC: true

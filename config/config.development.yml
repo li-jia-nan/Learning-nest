@@ -1,6 +1,8 @@
-dba:
-  mysql1:
-    name: lijianan-dev-1
+DB_DATABASE: mysql
+DB_HOST: 127.0.0.1
+DB_PORT: 3306
 
-  mysql2:
-    name: lijianan-dev-2
+DB_USERNAME: root
+DB_PASSWORD: example
+
+DB_SYNC: true
