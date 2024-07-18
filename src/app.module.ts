@@ -7,7 +7,7 @@ import * as Joi from 'joi';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import type { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ConfigEnum } from './user/enum/config.enum';
-// import { User } from './user/user.entity';
+import { User } from './user/user.entity';
 
 const envFilePath = `.env.${process.env.NODE_ENV ?? `development`}`;
 
@@ -40,7 +40,7 @@ const envFilePath = `.env.${process.env.NODE_ENV ?? `development`}`;
           username: configService.get(ConfigEnum.DB_USERNAME),
           password: configService.get(ConfigEnum.DB_PASSWORD),
           database: configService.get(ConfigEnum.DB_DATABASE),
-          entities: [],
+          entities: [User],
           synchronize: configService.get(ConfigEnum.DB_SYNC),
           logging: ['error'],
         } as TypeOrmModuleOptions;
