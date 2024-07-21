@@ -3,6 +3,6 @@ DB_HOST: xxxxx.com
 DB_PORT: 3306
 
 DB_USERNAME: root
-DB_PASSWORD: lang-example-password
+DB_PASSWORD: 185150
 
 DB_SYNC: true
