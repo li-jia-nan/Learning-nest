@@ -45,7 +45,7 @@ const envFilePath = `.env.${process.env.NODE_ENV ?? `development`}`;
           database: configService.get(ConfigEnum.DB_DATABASE),
           entities: [User, Profile, Logs, Roles],
           synchronize: configService.get(ConfigEnum.DB_SYNC),
-          logging: ['error'],
+          logging: process.env.NODE_ENV === 'development',
         } as TypeOrmModuleOptions;
       },
     }),
